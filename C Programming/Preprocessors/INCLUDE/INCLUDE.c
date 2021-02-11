@@ -2,5 +2,5 @@
 #include "./Test.h"
 
 int main() {
-	printf("%d\n", function(x));
+	printf("%d\n", function(9));
 }
