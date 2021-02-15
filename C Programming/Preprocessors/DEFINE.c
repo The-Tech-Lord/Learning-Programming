@@ -7,4 +7,5 @@ int main() {
     int z = 5;
     SOME_FUNCTION(z, 6);
     printf("%d\n", z);
+    #undef SOME_FUNCTION
 }
