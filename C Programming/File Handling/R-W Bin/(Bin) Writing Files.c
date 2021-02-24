@@ -15,7 +15,7 @@ int main() {
         num.n1 = i;
         num.n2 = i;
         num.n3 = i;
-        num.n4 = i;        
+        num.n4 = i;	
         if((fwrite(&num, sizeof(struct threeNum), 1, fptr)) < 1) {
             printf("File Write Error on Iteration %d...", i);
             return 1;

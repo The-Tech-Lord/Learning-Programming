@@ -1,5 +1,7 @@
 #include "Header2.h"
 
+#include <stdio.h>
+
 void printFunc() {
-	prinf("Hello Kagepro!");
+	printf("Hello Kagepro!\n");
 }
