@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void IHaveNoFuckingCluePleaseHelpMeIAmHangingByAThread(int *PTR_A, int PTR_SIZE) {
-    PTR_A = (int *)malloc(sizeof(int) * PTR_SIZE);
-    if (PTR_A == NULL)
-        return;
+int AllocationFunction(int **PTR, int PTR_SIZE) {
+    *PTR = (int *)malloc(sizeof(int) * PTR_SIZE);
+    if (*PTR == NULL)
+        return 1;
+    return 0;
+}
+
+void IHaveNoFuckingCluePleaseHelpMeIAmHangingByAThread(int (*AllocFunc)(int **, int), int *PTR_A, int PTR_SIZE) {
+    AllocFunc(&PTR_A, PTR_SIZE);
     for (int i = 0; i < PTR_SIZE; i++) {
         PTR_A[i] = i * 5;
         printf("Value: %d\n", *(PTR_A + i));
@@ -14,5 +19,5 @@ void IHaveNoFuckingCluePleaseHelpMeIAmHangingByAThread(int *PTR_A, int PTR_SIZE)
 
 int main() {
     int *array = NULL;
-    IHaveNoFuckingCluePleaseHelpMeIAmHangingByAThread(array, 10);
+    IHaveNoFuckingCluePleaseHelpMeIAmHangingByAThread(AllocationFunction, array, 10);
 }
