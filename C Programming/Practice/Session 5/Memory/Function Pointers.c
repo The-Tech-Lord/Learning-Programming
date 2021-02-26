@@ -9,7 +9,8 @@ int AllocationFunction(int **PTR, int PTR_SIZE) {
 }
 
 void IHaveNoFuckingCluePleaseHelpMeIAmHangingByAThread(int (*AllocFunc)(int **, int), int *PTR_A, int PTR_SIZE) {
-    AllocFunc(&PTR_A, PTR_SIZE);
+    if (AllocFunc(&PTR_A, PTR_SIZE) == 1)
+        exit(1);
     for (int i = 0; i < PTR_SIZE; i++) {
         PTR_A[i] = i * 5;
         printf("Value: %d\n", *(PTR_A + i));
