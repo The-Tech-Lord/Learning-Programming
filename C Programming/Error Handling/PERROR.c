@@ -6,4 +6,5 @@ int main() {
 	fptr = fopen("nonexistant.txt", "r");
 
 	perror("Error");
+	fclose(fptr);
 }

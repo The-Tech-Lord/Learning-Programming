@@ -1,0 +1,1 @@
+int diamond = 5;

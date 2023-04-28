@@ -1,0 +1,4 @@
+#ifndef ESSENTIAL_VARIABLES_H
+#define ESSENTIAL_VARIABLES_H
+
+#endif

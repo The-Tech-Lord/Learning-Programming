@@ -1,0 +1,4 @@
+#ifndef ESSENTIAL_FUNCTIONS_H
+#define ESSENTIAL_FUNCTIONS_H
+
+#endif
